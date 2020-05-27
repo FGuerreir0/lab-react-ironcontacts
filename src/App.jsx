@@ -46,6 +46,13 @@ class App extends Component {
 
   delete = (index) => {
     console.log(index);
+    let removeArray = [...this.state.fivecontacts];
+    let remove = removeArray.splice(index, 1);
+
+    console.log(this.contactArray);
+    this.setState({
+      fivecontacts: removeArray,
+    });
   };
 
   render() {
@@ -91,7 +98,10 @@ class App extends Component {
                       <p>{contact.popularity.toFixed(2)}</p>
                     </th>
                     <th>
-                      <button onClick={this.delete}> Delete</button>
+                      <button onClick={() => this.delete(index)}>
+                        {' '}
+                        Delete
+                      </button>
                     </th>
                   </tr>
                 );
