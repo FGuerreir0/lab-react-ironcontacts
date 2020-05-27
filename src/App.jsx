@@ -37,8 +37,8 @@ class App extends Component {
   sortPopularity = () => {
     this.setState({
       fivecontacts: this.state.fivecontacts.sort(function (a, b) {
-        if (a.popularity > b.popularity) return 1;
-        else if (a.popularity < b.popularity) return -1;
+        if (a.popularity < b.popularity) return 1;
+        else if (a.popularity > b.popularity) return -1;
         else return 0;
       }),
     });
